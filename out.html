@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Documentation overview of the OCaml platform</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<style>body {max-width:unset!important}</style>
+<header id="title-block-header">
+<h1 class="title">Documentation overview of the OCaml platform</h1>
+</header>
+<p>This is an overview of the available resources, both official and not, to understand and use the main tools of the OCaml platform. The goal is to assess the current state of the documentation, and decide what improvements should be prioritized. The list tries to be exhaustive for official resources, but is not exhaustive for non-official resources although it tries to include significant/useful external resources (such as Real World OCaml).</p>
+<p>The tools are roughly ordered in decreasing importance order (an understanding of the tools near the top is absolutely necessary to be productive in OCaml).</p>
+<p>All resources are roughly categorized according to the <a href="https://diataxis.fr/">Diátaxis</a> documentation framework along the axes of practial/theoretical and learning/working. Furthermore, for category a resource can be rated <span style="color: green">●</span>, <span style="color: orange">●</span> or <span style="color: red">●</span> according to these (arbitrary, vague and subjective) criteria:</p>
+<ul>
+<li><p><span style="color: green">●</span> for resources that are complete, up-to-date and well-written;</p></li>
+<li><p><span style="color: orange">●</span> for resources that are not complete enough, or are austere to beginners;</p></li>
+<li><p><span style="color: red">●</span> for resources that are out of date, or exist but with only the bare minimum of information, or are very hard to navigate.</p></li>
+</ul>
+<p>Resources in <strong>bold</strong> are official ones: either written/published by the authors of the tool or under the <a href="https://ocaml.org">https://ocaml.org</a> domain.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Tool</th>
+<th style="text-align: left;">Resource</th>
+<th style="text-align: center;">Reference</th>
+<th style="text-align: center;">Explanation</th>
+<th style="text-align: center;">Tutorial</th>
+<th style="text-align: center;">How-to guide</th>
+<th style="text-align: left;">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>opam</code></td>
+<td style="text-align: left;"><strong><a href="https://opam.ocaml.org/doc/Manual.html">Manual</a></strong></td>
+<td style="text-align: center;"><span style="color: green">●</span></td>
+<td style="text-align: center;"><span style="color: orange">●</span></td>
+<td style="text-align: center;"> </td>
+<td style="text-align: center;"> </td>
+<td style="text-align: left;">Lacks a bit of structure</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><strong><a href="https://opam.ocaml.org/doc/Usage.html">Usage</a></strong></td>
+<td style="text-align: center;"> </td>
+<td style="text-align: center;"> </td>
+<td style="text-align: center;"><span style="color: red">●</span></td>
+<td style="text-align: center;"> </td>
+<td style="text-align: left;">Structured more like a reference than a good entry point</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><strong><a href="https://opam.ocaml.org/doc/FAQ.html">FAQ</a></strong></td>
+<td style="text-align: center;"> </td>
+<td style="text-align: center;"> </td>
+<td style="text-align: center;"> </td>
+<td style="text-align: center;"><span style="color: orange">●</span></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><strong><a href="https://ocaml.org/docs/up-and-running">Up and running</a></strong></td>
+<td style="text-align: center;"> </td>
+<td style="text-align: center;"><span style="color: orange">●</span></td>
+<td style="text-align: center;"><span style="color: green">●</span></td>
+<td style="text-align: center;"> </td>
+<td style="text-align: left;">Not hosted on the opam website: lacks visibility</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><em>Overall official</em></td>
+<td style="text-align: center;"><span style="color: green">●</span></td>
+<td style="text-align: center;"><span style="color: orange">●</span></td>
+<td style="text-align: center;"><span style="color: orange">●</span></td>
+<td style="text-align: center;"><span style="color: orange">●</span></td>
+<td style="text-align: left;"><strong>Lack of clear entry point for beginners with concepts explained</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><a href="https://dev.realworldocaml.org/platform.html">Real World OCaml Ch.21</a></td>
+<td style="text-align: center;"> </td>
+<td style="text-align: center;"><span style="color: green">●</span></td>
+<td style="text-align: center;"><span style="color: green">●</span></td>
+<td style="text-align: center;"> </td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>dune</code></td>
+<td style="text-align: left;"><strong><a href="https://dune.readthedocs.io/en/stable/index.html">Manual</a></strong></td>
+<td style="text-align: center;"><span style="color: green">●</span></td>
+<td style="text-align: center;"><span style="color: orange">●</span></td>
+<td style="text-align: center;"> </td>
+<td style="text-align: center;"><span style="color: orange">●</span></td>
+<td style="text-align: left;">The structure is a bit all over the place</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><strong><a href="https://dune.readthedocs.io/en/latest/quick-start.html">Quick start</a></strong></td>
+<td style="text-align: center;"> </td>
+<td style="text-align: center;"><span style="color: orange">●</span></td>
+<td style="text-align: center;"><span style="color: green">●</span></td>
+<td style="text-align: center;"> </td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><strong><a href="https://www.youtube.com/watch?v=BNZhmMAJarw">Introduction video</a></strong></td>
+<td style="text-align: center;"> </td>
+<td style="text-align: center;"> </td>
+<td style="text-align: center;"><span style="color: orange">●</span></td>
+<td style="text-align: center;"> </td>
+<td style="text-align: left;">A bit outdated</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><em>Overall official</em></td>
+<td style="text-align: center;"><span style="color: green">●</span></td>
+<td style="text-align: center;"><span style="color: orange">●</span></td>
+<td style="text-align: center;"><span style="color: orange">●</span></td>
+<td style="text-align: center;"><span style="color: orange">●</span></td>
+<td style="text-align: left;"><strong>The ocamlverse tutorial below should be official</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><a href="https://ocamlverse.net/content/quickstart_ocaml_project_dune.html">OCamlverse quickstart</a></td>
+<td style="text-align: center;"> </td>
+<td style="text-align: center;"><span style="color: green">●</span></td>
+<td style="text-align: center;"><span style="color: green">●</span></td>
+<td style="text-align: center;"> </td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><a href="https://dev.realworldocaml.org/platform.html">Real World OCaml Ch.21</a></td>
+<td style="text-align: center;"> </td>
+<td style="text-align: center;"><span style="color: orange">●</span></td>
+<td style="text-align: center;"><span style="color: orange">●</span></td>
+<td style="text-align: center;"> </td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>merlin</code></td>
+<td style="text-align: left;"><strong><a href="https://github.com/ocaml/merlin/wiki">Github Wiki</a></strong></td>
+<td style="text-align: center;"><span style="color: red">●</span></td>
+<td style="text-align: center;"> </td>
+<td style="text-align: center;"><span style="color: orange">●</span></td>
+<td style="text-align: center;"> </td>
+<td style="text-align: left;">List of commands not documented. User lost after editor setup.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><strong><a href="https://ocaml.github.io/merlin/">OCaml github.io</a></strong></td>
+<td style="text-align: center;"><span style="color: orange">●</span></td>
+<td style="text-align: center;"> </td>
+<td style="text-align: center;"><span style="color: green">●</span></td>
+<td style="text-align: center;"> </td>
+<td style="text-align: left;">Nice style but lacks visibility!</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><em>Overall official</em></td>
+<td style="text-align: center;"><span style="color: orange">●</span></td>
+<td style="text-align: center;"> </td>
+<td style="text-align: center;"><span style="color: green">●</span></td>
+<td style="text-align: center;"> </td>
+<td style="text-align: left;"><strong>The gihub.io should be linked from the wiki or somewhere visible. The wiki needs some structure.</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><a href="https://ocamlverse.net/content/editor_setup.html">OCamlverse editor setup</a></td>
+<td style="text-align: center;"> </td>
+<td style="text-align: center;"> </td>
+<td style="text-align: center;"><span style="color: orange">●</span></td>
+<td style="text-align: center;"> </td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>ocaml-lsp</code></td>
+<td style="text-align: left;"><strong><a href="https://github.com/ocaml/ocaml-lsp">README+docs/</a></strong></td>
+<td style="text-align: center;"><span style="color: red">●</span></td>
+<td style="text-align: center;"><span style="color: red">●</span></td>
+<td style="text-align: center;"><span style="color: red">●</span></td>
+<td style="text-align: center;"> </td>
+<td style="text-align: left;">No structure, information sometimes outdated, no editor setup instructions.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><strong><a href="https://marketplace.visualstudio.com/items?itemName=ocamllabs.ocaml-platform">OCaml Platform Extension</a></strong></td>
+<td style="text-align: center;"><span style="color: green">●</span></td>
+<td style="text-align: center;"><span style="color: orange">●</span></td>
+<td style="text-align: center;"><span style="color: green">●</span></td>
+<td style="text-align: center;"> </td>
+<td style="text-align: left;">Good for VS Code</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><em>Overall official</em></td>
+<td style="text-align: center;"><span style="color: orange">●</span></td>
+<td style="text-align: center;"><span style="color: orange">●</span></td>
+<td style="text-align: center;"><span style="color: orange">●</span></td>
+<td style="text-align: center;"> </td>
+<td style="text-align: left;"><strong>Good if using VS Code (though the extension could be more visible). Other users are left on their own (or assuming merlin)</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>utop</code></td>
+<td style="text-align: left;"><strong><a href="https://github.com/ocaml-community/utop">README</a></strong></td>
+<td style="text-align: center;"><span style="color: orange">●</span></td>
+<td style="text-align: center;"><span style="color: red">●</span></td>
+<td style="text-align: center;"><span style="color: red">●</span></td>
+<td style="text-align: center;"><span style="color: green">●</span></td>
+<td style="text-align: left;">Good for installation, configuration. But you need to know how the general toplevel works.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><strong><a href="https://ocaml-community.github.io/utop/utop/index.html">API</a></strong></td>
+<td style="text-align: center;"><span style="color: green">●</span></td>
+<td style="text-align: center;"> </td>
+<td style="text-align: center;"> </td>
+<td style="text-align: center;"> </td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><em>Overall official</em></td>
+<td style="text-align: center;"><span style="color: green">●</span></td>
+<td style="text-align: center;"><span style="color: red">●</span></td>
+<td style="text-align: center;"><span style="color: orange">●</span></td>
+<td style="text-align: center;"><span style="color: green">●</span></td>
+<td style="text-align: left;"><strong>Well documented but could link to resources explaining toplevel usage</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><a href="https://ocamlverse.net/content/toplevel.html">OCamlverse toplevel</a></td>
+<td style="text-align: center;"> </td>
+<td style="text-align: center;"><span style="color: green">●</span></td>
+<td style="text-align: center;"><span style="color: orange">●</span></td>
+<td style="text-align: center;"> </td>
+<td style="text-align: left;">Introduction to the generic toplevel</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>ocamlformat</code></td>
+<td style="text-align: left;"><strong><a href="https://ocaml.org/p/ocamlformat/0.24.1/doc/index.html">Main page</a></strong></td>
+<td style="text-align: center;"><span style="color: orange">●</span></td>
+<td style="text-align: center;"><span style="color: orange">●</span></td>
+<td style="text-align: center;"><span style="color: green">●</span></td>
+<td style="text-align: center;"><span style="color: green">●</span></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><em>Overall official</em></td>
+<td style="text-align: center;"><span style="color: orange">●</span></td>
+<td style="text-align: center;"><span style="color: orange">●</span></td>
+<td style="text-align: center;"><span style="color: green">●</span></td>
+<td style="text-align: center;"><span style="color: green">●</span></td>
+<td style="text-align: left;"><strong>The CLI manual is the only complete reference for options</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><a href="https://dev.realworldocaml.org/platform.html">Real World OCaml Ch.21</a></td>
+<td style="text-align: center;"> </td>
+<td style="text-align: center;"> </td>
+<td style="text-align: center;"><span style="color: orange">●</span></td>
+<td style="text-align: center;"><span style="color: orange">●</span></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>odoc</code></td>
+<td style="text-align: left;"><strong><a href="https://ocaml.github.io/odoc/">Main page</a></strong></td>
+<td style="text-align: center;"><span style="color: green">●</span></td>
+<td style="text-align: center;"><span style="color: green">●</span></td>
+<td style="text-align: center;"><span style="color: green">●</span></td>
+<td style="text-align: center;"><span style="color: green">●</span></td>
+<td style="text-align: left;"><strong>Very well documented</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Furthermore, there are a few resources introducing the whole platform and the interactions between some of the different tools:</p>
+<ul>
+<li><p><strong><a href="https://ocaml.org/docs/best-practices">OCaml best practices</a></strong></p></li>
+<li><p><strong><a href="https://ocaml.org/docs/up-and-running">OCaml up and running</a></strong></p></li>
+<li><p><a href="https://dev.realworldocaml.org/platform.html">Real World OCaml Ch.21</a></p></li>
+</ul>
+<p>Overall one of the biggest problems for beginners is the segmentation of the documentation. Even amonst official resources and for the same tool, documentation lives on:</p>
+<ul>
+<li><p><a href="https://ocaml.org/docs/">https://ocaml.org/docs/</a></p></li>
+<li><p><a href="https://ocaml.github.io">https://ocaml.github.io</a></p></li>
+<li><p><a href="https://opam.ocaml.org">https://opam.ocaml.org</a></p></li>
+<li><p><a href="https://dune.readthedocs.io">https://dune.readthedocs.io</a></p></li>
+<li><p>the Github pages of the tools</p></li>
+</ul>
+<p>Except when reading a course (such as Real World OCaml), a beginner will most likely learn about a single tool without seeing the big picture of the OCaml tooling. The <a href="https://ocaml.org/docs/platform">OCaml platform</a> page gives it blessing to a selection of tools but then leaves users on their own to figure out how to install and use each tool.</p>
+</body>
+</html>

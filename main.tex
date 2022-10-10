@@ -1,0 +1,278 @@
+\documentclass{article}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\hypersetup{colorlinks=true} % Links are not framed but colored
+\hypersetup{urlcolor=blue}
+
+\title{Documentation overview of the OCaml platform}
+\date{\today}
+
+\newcommand{\tool}[1]{\texttt{#1}}
+\newcommand{\good}{\textcolor{green}{●}}
+\newcommand{\meh}{\textcolor{orange}{●}}
+\newcommand{\bad}{\textcolor{red}{●}}
+\newcommand{\overall}{\textit{Overall official}}
+%\newcommand{\bad}{\textcolor{green}{✓}}
+\newcommand{\no}{~}
+\newcommand{\official}[2]{\textbf{\href{#1}{#2}}}
+\newcommand{\external}[2]{\href{#1}{#2}}
+\newenvironment{doclist}
+{\begin{minipage}[t]{0.2\textwidth}\begin{itemize}}
+{\end{itemize}\end{minipage}}
+
+\begin{document}
+\maketitle
+This is an overview of the available resources, both official and not, to
+understand and use the main tools of the OCaml platform. The goal is to assess
+the current state of the documentation, and decide what improvements should be
+prioritized. The list tries to be exhaustive for official resources, but is not
+exhaustive for non-official resources although it tries to include
+significant/useful external resources (such as Real World OCaml).
+
+The tools are roughly ordered in decreasing importance order (an understanding
+of the tools near the top is absolutely necessary to be productive in OCaml).
+
+All resources are roughly categorized according to the
+\href{https://diataxis.fr/}{Diátaxis} documentation framework along the axes of
+practial/theoretical and learning/working. Furthermore, for category a resource
+can be rated \good,~\meh~or \bad~according to these (arbitrary, vague and
+subjective) criteria:
+\begin{itemize}
+  \item \good~for resources that are complete, up-to-date and well-written;
+  \item \meh~for resources that are not complete enough, or are austere to
+    beginners;
+  \item \bad~for resources that are out of date, or exist but with only the bare
+    minimum of information, or are very hard to navigate.
+\end{itemize}
+
+Resources in \textbf{bold} are official ones: either written/published by the
+authors of the tool or under the \url{https://ocaml.org} domain.
+
+\begin{table}[htb]
+    \centering
+      \begin{tabular}{clccccl}
+\toprule
+Tool & Resource & Reference & Explanation & Tutorial & How-to guide & Notes \\
+\midrule
+% OPAM
+ \tool{opam} &
+ \official{https://opam.ocaml.org/doc/Manual.html}{Manual} &
+ \good &
+ \meh &
+ \no &
+ \no &
+ Lacks a bit of structure\\
+     &
+ \official{https://opam.ocaml.org/doc/Usage.html}{Usage} &
+ \no &
+ \no &
+ \bad &
+ \no &
+ Structured more like a reference than a good entry point\\
+     &
+ \official{https://opam.ocaml.org/doc/FAQ.html}{FAQ} &
+ \no &
+ \no &
+ \no &
+ \meh &
+ \\
+     &
+ \official{https://ocaml.org/docs/up-and-running}{Up and running} &
+ \no &
+ \meh &
+ \good &
+ \no &
+ Not hosted on the opam website: lacks visibility\\
+ &\overall &
+ \good &
+ \meh &
+ \meh &
+ \meh &
+ \textbf{Lack of clear entry point for beginners with concepts explained}\\
+     &
+ \external{https://dev.realworldocaml.org/platform.html}{Real World OCaml Ch.21} &
+ \no &
+ \good &
+ \good &
+ \no &
+ \\
+
+% DUNE
+ \tool{dune} &
+\official{https://dune.readthedocs.io/en/stable/index.html}{Manual} &
+\good &
+\meh &
+\no &
+\meh &
+The structure is a bit all over the place\\
+     &
+\official{https://dune.readthedocs.io/en/latest/quick-start.html}{Quick start} &
+\no &
+\meh &
+\good &
+\no &\\
+     &
+\official{https://www.youtube.com/watch?v=BNZhmMAJarw}{Introduction video} &
+\no &
+\no &
+\meh &
+\no &
+A bit outdated\\
+ &\overall &
+ \good &
+ \meh &
+ \meh &
+ \meh &
+ \textbf{The ocamlverse tutorial below should be official}\\
+     &
+\external{https://ocamlverse.net/content/quickstart_ocaml_project_dune.html}{OCamlverse
+quickstart}&
+\no &
+\good &
+\good &
+\no &
+\\
+     &
+ \external{https://dev.realworldocaml.org/platform.html}{Real World OCaml Ch.21} &
+ \no &
+ \meh &
+ \meh &
+ \no &
+ \\
+% MERLIN
+ \tool{merlin} &
+\official{https://github.com/ocaml/merlin/wiki}{Github Wiki} &
+\bad &
+\no &
+\meh &
+\no &List of commands not documented. User lost after editor setup.\\
+   &
+\official{https://ocaml.github.io/merlin/}{OCaml github.io} &
+\meh &
+\no &
+\good &
+\no &Nice style but lacks visibility!\\
+ &\overall &
+ \meh &
+ \no &
+ \good &
+ \no &
+ \textbf{The gihub.io should be linked from the wiki or somewhere visible. The
+ wiki needs some structure.}\\
+   &
+\external{https://ocamlverse.net/content/editor_setup.html}{OCamlverse editor
+setup} &
+\no &
+\no &
+\meh &
+\no &\\
+% OCAML-LSP
+ \tool{ocaml-lsp} &
+\official{https://github.com/ocaml/ocaml-lsp}{README+docs/} &
+\bad &
+\bad &
+\bad &
+\no &No structure, information sometimes outdated, no editor setup instructions.\\
+    &
+\official{https://marketplace.visualstudio.com/items?itemName=ocamllabs.ocaml-platform}{OCaml
+Platform Extension}&
+\good &
+\meh &
+\good &
+\no &Good for VS Code\\
+ &\overall &
+ \meh &
+ \meh &
+ \meh &
+ \no &
+ \textbf{Good if using VS Code (though the extension could be more visible).
+ Other users are left on their own (or assuming merlin)}\\
+% UTOP
+ \tool{utop} &
+ \official{https://github.com/ocaml-community/utop}{README} &
+ \meh &
+ \bad &
+ \bad &
+ \good &Good for installation, configuration. But you need to know how the
+ general toplevel works.\\
+      &
+ \official{https://ocaml-community.github.io/utop/utop/index.html}{API} &
+ \good &
+ \no &
+ \no &
+ \no &\\
+ &\overall &
+ \good &
+ \bad &
+ \meh &
+ \good &
+ \textbf{Well documented but could link to resources explaining toplevel
+ usage}\\
+      &
+\external{https://ocamlverse.net/content/toplevel.html}{OCamlverse
+toplevel}&
+ \no &
+ \good &
+ \meh &
+ \no &Introduction to the generic toplevel\\
+
+% OCAMLFORMAT
+ \tool{ocamlformat} &
+ \official{https://ocaml.org/p/ocamlformat/0.24.1/doc/index.html}{Main page} &
+ \meh &
+ \meh &
+ \good &
+ \good &\\
+ &\overall &
+ \meh &
+ \meh &
+ \good &
+ \good &
+ \textbf{The CLI manual is the only complete reference for options}\\
+     &
+ \external{https://dev.realworldocaml.org/platform.html}{Real World OCaml Ch.21} &
+ \no &
+ \no &
+ \meh &
+ \meh\\
+% ODOC
+ \tool{odoc} &
+ \official{https://ocaml.github.io/odoc/}{Main page} &
+ \good &
+ \good &
+ \good &
+ \good &\textbf{Very well documented}\\
+\bottomrule
+        \end{tabular}
+\end{table}
+
+Furthermore, there are a few resources introducing the whole platform and the
+interactions between some of the different tools:
+\begin{itemize}
+  \item \official{https://ocaml.org/docs/best-practices}{OCaml best practices}
+  \item \official{https://ocaml.org/docs/up-and-running}{OCaml up and running}
+  \item \external{https://dev.realworldocaml.org/platform.html}{Real World OCaml Ch.21}
+\end{itemize}
+
+Overall one of the biggest problems for beginners is the segmentation of the
+documentation. Even amonst official resources and for the same tool,
+documentation lives on:
+\begin{itemize}
+  \item \url{https://ocaml.org/docs/}
+  \item \url{https://ocaml.github.io}
+  \item \url{https://opam.ocaml.org}
+  \item \url{https://dune.readthedocs.io}
+  \item the Github pages of the tools
+\end{itemize}
+
+Except when reading a course (such as Real World OCaml), a beginner will most
+likely learn about a single tool without seeing the big picture of the OCaml
+tooling. The \href{https://ocaml.org/docs/platform}{OCaml platform} page gives
+it blessing to a selection of tools but then leaves users on their own to figure
+out how to install and use each tool.
+
+\end{document}
