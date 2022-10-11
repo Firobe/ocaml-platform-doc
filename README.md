@@ -71,6 +71,9 @@ and the interactions between some of the different tools:
 -   [Real World OCaml
     Ch.21](https://dev.realworldocaml.org/platform.html)
 
+-   [Tim’s "Getting Started with OCaml in
+    2021"](https://lambdafoo.com/posts/2021-10-29-getting-started-with-ocaml.html)
+
 Overall one of the biggest problems for beginners is the segmentation of
 the documentation. Even amonst official resources and for the same tool,
 documentation lives on:
